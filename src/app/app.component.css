@@ -1,0 +1,13 @@
+.box{
+  width: 100%;
+}
+
+.inputbox{
+  width: 100%;
+}
+
+textarea{
+  scroll-behavior: smooth;
+  resize: none;
+}
+
