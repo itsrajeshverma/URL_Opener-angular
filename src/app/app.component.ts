@@ -32,12 +32,15 @@ export class AppComponent {
     try {
       //  open each url in new tab
        this.urlArray.forEach((element : string) => {
+        if(!element.startsWith("https")){
+          element = "https://" + element
+        }
        if(element.includes("http:")|| element.includes("https:")){
         window.open(element , '_blank')
        }
     });
     } catch (error) {
-      alert(error)
+
     }
   }
 
