@@ -17,7 +17,7 @@ export class AppComponent {
     this.urlArray = []
     let array = this.userInput.split("\n");
     array.forEach(element=>{
-      if(element){
+      if(element != ""){
         this.urlArray.push(element)
       }
     })
@@ -25,17 +25,14 @@ export class AppComponent {
   }
 
   public openUrl(){
-    // convert string to array
-    if(this.urlArray = []){
-      this.urlArray = this.userInput.split("\n");
-    }
+
     try {
       //  open each url in new tab
        this.urlArray.forEach((element : string) => {
-        if(!element.startsWith("https")){
-          element = "https://" + element
-        }
        if(element.includes("http:")|| element.includes("https:")){
+        window.open(element , '_blank')
+       }else{
+        element = "https://" + element
         window.open(element , '_blank')
        }
     });
